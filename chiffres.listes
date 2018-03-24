@@ -1,0 +1,21 @@
+#!/usr/bin/python
+
+# Doublage des chiffres d'une liste - Boucle
+lst = range(11)
+LST = []
+print lst
+for item in lst:
+    LST = LST + [2*item]
+    print LST
+
+# Doublage des chiffres d'une liste - 'map'
+print map(lambda x: 2*x, lst), "'map'"
+
+# Doublage des chiffres d'une liste - 'map' et auxiliaire
+def doubler(item):
+    return 2 * item
+print map(doubler, lst), "'map' et auxiliaire"
+
+# Doublage des chiffres d'une liste - 'map' et fonction anonyme!
+doubler = lambda x: 2*x
+print map(doubler, lst), "'map' et fonction anonyme"
