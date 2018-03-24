@@ -25,7 +25,7 @@ print map(doubler, lst), "'map' et fonction anonyme"
 print lst
 print map(lambda x: 3*x, lst), "'map'"
 
-# Multiplication du l'élément "5" par deux
+# Multiplication de  "5" par deux
 def katuka(essika):
     def sosa(kima):
         return 2*kima if kima==essika else kima
@@ -34,7 +34,7 @@ sosaTanu = katuka(5)
 print lst, "'lst'"
 print map(sosaTanu, lst), "Seul 5*2 dans 'lst'"
 
-# Multiplication des élement "5" et "7" par deux
+# Multiplication de "5" et "7" par deux
 def katuka(essika, mosusu):
     def sosa(kima):
         return 2*kima if kima==essika or kima==mosusu else kima
