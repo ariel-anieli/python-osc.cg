@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 # Doublage des chiffres d'une liste - Boucle
 lst = range(11)
@@ -19,3 +20,47 @@ print map(doubler, lst), "'map' et auxiliaire"
 # Doublage des chiffres d'une liste - 'map' et fonction anonyme!
 doubler = lambda x: 2*x
 print map(doubler, lst), "'map' et fonction anonyme"
+
+# Triplage des chiffres d'une liste - 'map'
+print lst
+print map(lambda x: 3*x, lst), "'map'"
+
+# Multiplication du l'élément "5" par deux
+def katuka(essika):
+    def sosa(kima):
+        return 2*kima if kima==essika else kima
+    return sosa
+sosaTanu = katuka(5)
+print lst, "'lst'"
+print map(sosaTanu, lst), "Seul 5*2 dans 'lst'"
+
+# Multiplication des élement "5" et "7" par deux
+def katuka(essika, mosusu):
+    def sosa(kima):
+        return 2*kima if kima==essika or kima==mosusu else kima
+    return sosa
+sosaTanuNaMoko = katuka(5,7)
+print map(sosaTanuNaMoko, lst), "Seuls 5 et 7 fois deux dans 'lst'"
+
+# Filtre sur nombres impairs
+def lobokoYaMama(eloko):
+ return True if eloko%2!=0 else False
+print lst, "'lst'"
+print filter(lobokoYaMama, lst), "Nombres impairs dans 'lst'"
+
+# Filtre sur nombres pairs
+def lobokoYaTata(eloko):
+    return True if eloko%2==0 else False
+print lst, "'lst'"
+print filter(lobokoYaTata, lst), "Nombres pairs dans 'lst'"
+
+# Somme des nombres pairs avec 'reduce'
+makomiYaMama = filter(lobokoYaMama, lst)
+print makomiYaMama
+def sangisa(libosso, sima):
+    print libosso, sima
+    print libosso + sima
+    return libosso + sima
+print lst, "'lst'"
+print makomiYaMama, "Nombres pairs de 'lst'"
+print reduce(sangisa, makomiYaMama), "Somme des pairs de 'lst'"
